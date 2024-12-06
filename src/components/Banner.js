@@ -63,6 +63,15 @@ export default function Banner() {
         return (
             <div className='container'>
                 <div className='home_container'>
+                <iframe 
+                    className='iframe'
+                    width="640" 
+                    height="360" 
+                    src="https://www.youtube.com/embed/HfaIcB4Ogxk?si=pa1nmlaf7bFLsrsW" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen" 
+                ></iframe>
 
                 </div>
                 
