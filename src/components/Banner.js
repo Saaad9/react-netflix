@@ -61,8 +61,11 @@ export default function Banner() {
         )
     } else {
         return (
-            <div>
-                clicked
+            <div className='container'>
+                <div className='home_container'>
+
+                </div>
+                
             </div>
         )
     }
