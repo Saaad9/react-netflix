@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='App'>
       <Nav />
-
+      <Banner />
       <Row title="NETFLIX ORIGINALS"
           id="NO" 
           fetchUrl={requests.fetchNetflixOriginals} 
@@ -18,8 +18,6 @@ function App() {
       <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated}/>
       <Row title="Action Movies" id="AM" fetchUrl={requests.fetchActionMovies} />
       <Row title="Comedy Movies" id="CM" fetchUrl={requests.fetchComedyMovies}/>
-
-      <Banner />
     </div>
   );
 }
