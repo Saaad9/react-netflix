@@ -2,6 +2,7 @@ import axios from '../../api/axios';
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import './SearchPage.css';
+import { useDebounce } from '../../Hooks/useDebounce';
 
 export default function SearchPage() {
 
@@ -14,18 +15,18 @@ export default function SearchPage() {
   
   let query = useQuery();
   const searchTerm = query.get('q');
-  // console.log('searchTerm',searchTerm);
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
   
   useEffect(() => {
-    if(searchTerm){
-      fetchSearchMovies(searchTerm);
+    if(debouncedSearchTerm){
+      fetchSearchMovies(debouncedSearchTerm);
     }
-  },[searchTerm]);
+  },[debouncedSearchTerm]);
 
-  const fetchSearchMovies = async (searchTerm) => {
+  const fetchSearchMovies = async (debouncedSearchTerm) => {
     try {
       const request = await axios.get(
-        `/search/multi?include_adult=false&query=${searchTerm}`)
+        `/search/multi?include_adult=false&query=${debouncedSearchTerm}`)
         console.log('request',request);
         setSearchResults(request.data.results);
     } catch (error) {
@@ -41,7 +42,7 @@ export default function SearchPage() {
             const movieImageUrl = 
             "https://image.tmdb.org/t/p/w500" + movie.backdrop_path;
             return (
-              <div className='movie'>
+              <div className='movie' key={movie.id}>
                 <div className='movie__column-poster'>
                   <img
                     className='movie__poster'
@@ -59,7 +60,7 @@ export default function SearchPage() {
       <section className='no-results'>
         <div className='no-results__text'>
           <p>
-              찾고자 하는 검색어 {searchTerm}에 대한 결과가 없습니다.
+              찾고자 하는 검색어 {debouncedSearchTerm}에 대한 결과가 없습니다.
           </p>
         </div>
       </section>
