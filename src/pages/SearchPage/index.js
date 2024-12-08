@@ -27,7 +27,7 @@ export default function SearchPage() {
     try {
       const request = await axios.get(
         `/search/multi?include_adult=false&query=${debouncedSearchTerm}`)
-        console.log('request',request);
+        console.log('request', request.data.results);
         setSearchResults(request.data.results);
     } catch (error) {
       console.log('error',error);

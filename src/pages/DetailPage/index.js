@@ -6,12 +6,14 @@ export default function DetailPage() {
   const {movieId} = useParams();
   const [movie, setMovie] = useState({});
   console.log(movieId);
+  console.log("movie : ", movie);
 
   useEffect(() => {
     async function fecthData() {
       const request = await axios.get(
         `/movie/${movieId}`
       )
+      console.log('request data @@@@@ :',request)
       setMovie(request.data);
     }
     fecthData();
