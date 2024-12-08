@@ -21,7 +21,6 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
       <div className='slider'>
       <div className='slider__arrow-left'
           onClick={() => {
-            console.log(id);
             document.getElementById(id).scrollLeft -= window.innerWidth - 80;
           }}>
           <span className='arrow'>{"<"}</span>
@@ -38,7 +37,6 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
         </div>
         <div className='slider__arrow-right'
           onClick={() => {
-            console.log(id);
             document.getElementById(id).scrollLeft += window.innerWidth - 80;
           }}>
           <span className='arrow'>{">"}</span>
