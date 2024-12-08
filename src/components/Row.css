@@ -43,6 +43,7 @@
     justify-content: center;
     visibility: hidden;
   }
+
   .arrow {
     transition: 400ms all ease-in-out;
   }
