@@ -30,7 +30,7 @@ export default function Nav() {
   return (
     <nav className={`nav ${show ? "nav_black" : ""}`}>
       <img
-        src='/assets/netflix-logo.svg'
+        src='assets/netflix-logo.svg'
         alt='Netflix logo'
         className='nav_logo'
         onClick={() => window.location.reload()}
@@ -44,7 +44,7 @@ export default function Nav() {
       ></input>
       <img
         alt='User logged'
-        src='/assets/user-avatar.png'
+        src='assets/user-avatar.png'
         className='nav_avatar'
       ></img>
     </nav>
