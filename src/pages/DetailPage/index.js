@@ -13,7 +13,7 @@ export default function DetailPage() {
       const request = await axios.get(
         `/movie/${movieId}`
       )
-      console.log('request data @@@@@ :',request)
+      console.log('request data @@@@@ :',request.data)
       setMovie(request.data);
     }
     fecthData();
@@ -22,6 +22,7 @@ export default function DetailPage() {
   if(!movie) return <div>...loading</div>;
 
   return <section>
+    
     <img
       className='modal__poster-img'
       src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}

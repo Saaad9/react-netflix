@@ -42,8 +42,8 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
         loop={true}
         breakpoints={{
           1378: {

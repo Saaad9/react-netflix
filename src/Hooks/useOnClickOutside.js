@@ -3,7 +3,8 @@ import React, { useEffect } from 'react'
 function useOnClickOutside(ref, handler) {
     useEffect(() => {
         const listener = (event) => { 
-            console.log(ref.current);
+            console.log("클릭한 위치", event.target);
+            console.log("ref의 위치", ref.current);
             if(!ref.current || ref.current.contains(event.target)) {
                 return;
             }
